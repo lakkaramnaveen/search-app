@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { FaSearch } from 'react-icons/fa'
 import "./SearchBar.css"
@@ -10,9 +11,9 @@ export const SearchBar = ({setResults}) => {
             const results = json.filter((user)=>{
                 return value && user && user.name && user.name.toLowerCase().includes(value);
             });
-            console.log(results);
+            setResults(results);
         });
-        setResults(results);
+        // eslint-disable-next-line no-undef
     }
     const handleChange = (value) => {
         setInput(value)
