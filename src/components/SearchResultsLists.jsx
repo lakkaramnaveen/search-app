@@ -1,9 +1,13 @@
-import React from 'react'
+import "./SearchResultsLists.css";
 
-export const SearchResultsLists = () => {
+export const SearchResultsLists = ({results}) => {
   return (
     <div className='results-list'>
-        
+        {
+            results.map((result, id) => {
+                return <div key={id}>{result.name}</div>
+            }) 
+        }
     </div>
   )
 }
